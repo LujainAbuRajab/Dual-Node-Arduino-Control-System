@@ -10,7 +10,7 @@
 #define SERVO_PIN 9      // Servo motor pin      
 
 DHT dht(DHTPIN, DHTTYPE); // Initialize the DHT sensor
-Servo servoMotor;
+Servo servo;
 
 void setup() {
   Serial1.begin(9600);     // Start Serial1 for communication
@@ -21,7 +21,6 @@ void setup() {
   servo.attach(SERVO_PIN);
 }
 
-}
 
 void loop() {
   // Read values from DHT sensor

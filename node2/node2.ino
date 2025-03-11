@@ -8,9 +8,9 @@
 #define POT_PIN A1        // Potentiometer for servo control
 
 // DC Motor Driver Pins (L298N / L293D)
-#define MOTOR_ENA 5       // Motor Enable (PWM speed control)
-#define MOTOR_IN1 6       // Motor Direction 1
-#define MOTOR_IN2 7       // Motor Direction 2
+#define MOTOR_ENA 4       // Motor Enable (PWM speed control)
+#define MOTOR_IN1 28       // Motor Direction 1
+#define MOTOR_IN2 27       // Motor Direction 2
 
 #define SERVO_PIN 9       // Servo motor pin
 Servo servo;
@@ -104,7 +104,7 @@ void loop() {
         analogWrite(MOTOR_ENA, 0);
       }
       
-      servo.write(map(potValueReceived, 0, 1023, 0, 180))
+      servo.write(map(potValueReceived, 0, 1023, 0, 180));
     } else {
       Serial.print("Failed to parse JSON from Node 1: ");
       Serial.println(error.c_str());
