@@ -78,7 +78,7 @@ void loop() {
       Serial.print(receivedData);
       Serial.print(" | Node ID: ");
       Serial.print(nodeID);
-      Serial.print(" | Temperature: ");
+      Serial.print(" | Temperature: 22222222222222 ");
       Serial.print(temperatureReceived);
       Serial.print(" | Humidity: ");
       Serial.println(humidityReceived);
