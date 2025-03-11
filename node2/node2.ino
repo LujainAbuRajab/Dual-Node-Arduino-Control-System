@@ -10,7 +10,7 @@
 // DC Motor Driver Pins (L298N / L293D)
 #define MOTOR_ENA 4       // Motor Enable (PWM speed control)
 #define MOTOR_IN1 28       // Motor Direction 1
-#define MOTOR_IN2 27       // Motor Direction 2
+#define MOTOR_IN2 29       // Motor Direction 2
 
 #define SERVO_PIN 9       // Servo motor pin
 Servo servo;
@@ -33,7 +33,10 @@ void loop() {
   float temperature = dht.readTemperature(); // Read temperature as Celsius
   float humidity = dht.readHumidity();       // Read humidity
   int ldrValue = analogRead(LDR_PIN);
-  int potValue = analogRead(POT_PIN);
+  int potValue = analogRead(A1);
+
+  Serial.print("Potentiometer Value: ");
+  Serial.println(potValue);
 
   // Check if the readings are valid
   if (isnan(temperature) || isnan(humidity)) {

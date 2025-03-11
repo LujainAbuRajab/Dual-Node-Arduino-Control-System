@@ -4,8 +4,8 @@
 
 #define DHTPIN 21        // Pin where the DHT11 sensor is connected
 #define DHTTYPE DHT11   // DHT 11 or DHT22
-#define SWITCH_DIR 2     // Switch for direction control
-#define SWITCH_START 3   // Switch for start/stop
+#define SWITCH_DIR 24     // Switch for direction control
+#define SWITCH_START 25   // Switch for start/stop
 #define POT_PIN A2       // Potentiometer for DC motor control
 #define SERVO_PIN 9      // Servo motor pin      
 
