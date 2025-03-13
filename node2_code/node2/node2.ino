@@ -10,6 +10,7 @@
 #define MOTOR_ENA 4       
 #define MOTOR_IN1 27       
 #define MOTOR_IN2 26  
+#define LED_PIN 13
 
 DHT dht(DHTPIN, DHTTYPE); // Initialize the DHT sensor
 Servo servo;
@@ -22,6 +23,7 @@ void setup() {
   pinMode(MOTOR_ENA, OUTPUT);
   pinMode(MOTOR_IN1, OUTPUT);
   pinMode(MOTOR_IN2, OUTPUT);
+  pinMode(LED_PIN, OUTPUT);
 }
 
 void loop() {
@@ -94,6 +96,7 @@ void loop() {
       if (switchStart == 1) {  // If Start Switch is pressed
         int motorSpeed = map(potValueReceived, 0, 1023, 0, 255);
         analogWrite(MOTOR_ENA, motorSpeed);
+        analogWrite(LED_PIN, motorSpeed);
 
         if (switchDir == 1) { // Forward
           digitalWrite(MOTOR_IN1, HIGH);
@@ -106,6 +109,7 @@ void loop() {
         digitalWrite(MOTOR_IN1, LOW);
         digitalWrite(MOTOR_IN2, LOW);
         analogWrite(MOTOR_ENA, 0);
+        analogWrite(LED_PIN, 0);
       }
 
 
